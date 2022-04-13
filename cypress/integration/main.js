@@ -58,7 +58,7 @@ const acc=require('../fixtures/account.json')
         
     })
 
-    it('Testing Footer',function(){
+    it.only('Testing Footer',function(){
         Footer.footertop()
         Footer.footertopinner()
         Footer.footermiddle()
