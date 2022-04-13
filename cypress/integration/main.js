@@ -19,7 +19,7 @@ const acc=require('../fixtures/account.json')
     const account= new Account()
     const checkout=new Checkout()
     describe('Khaadi Home Page',function(){
-      it('Visiting site ',function()
+      it.only('Visiting site ',function()
         { 
             cy.visit(getvalue.baseURL)
             
@@ -48,17 +48,17 @@ const acc=require('../fixtures/account.json')
         })
         
         
-    it('PLP Testing',function()
+    it.only('PLP Testing',function()
     {
         
 
-       plp.sortbyAsc()
-       plp.sortbyDesc()
-    
+      // plp.sortbyAsc()
+       //plp.sortbyDesc()
+    plp.filtersCheck()
         
     })
 
-    it.only('Testing Footer',function(){
+    it('Testing Footer',function(){
         Footer.footertop()
         Footer.footertopinner()
         Footer.footermiddle()
