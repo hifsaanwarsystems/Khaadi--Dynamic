@@ -1,0 +1,10 @@
+{
+    "baseURL":"https://pk.khaadi.com/",
+    "tickerClass":".ticker-column",
+    "tickerText":"New Spring 2022 Unstitched Fabrics and Ready to Wear Collections are ",
+    "tickerBackgroundColor":"rgb(241, 241, 241)",
+    "tickerColor":"rgb(45, 43, 42)",
+    "tickerTextXpath":"//p[@class='ticker-text']",
+    "shopNowCss":"underline solid rgb(45, 43, 42)",
+    "shopNowlink":"pk.khaadi.com/"
+}
