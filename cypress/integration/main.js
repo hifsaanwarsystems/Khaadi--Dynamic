@@ -18,8 +18,8 @@ const acc=require('../fixtures/account.json')
     const pdp=new PDP()
     const account= new Account()
     const checkout=new Checkout()
-    describe('Khaadi Home Page',function(){
-      it.only('Visiting site ',function()
+    describe('Khaadi Website Automation',function(){
+      it('Visiting site ',function()
         { 
             cy.visit(getvalue.baseURL)
             
