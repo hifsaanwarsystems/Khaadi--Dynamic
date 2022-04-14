@@ -48,6 +48,9 @@ const acc=require('../fixtures/account.json')
     homepage.halfimage(temp.readytowear,1)
     homepage.halfimage(temp.western,2)
     homepage.Secondscrollbanners()
+    homepage.bannerImages()
+    homepage.bannerDots()
+    homepage.productSliderImages()
 
         })
         
