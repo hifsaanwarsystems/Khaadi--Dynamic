@@ -26,12 +26,11 @@ const acc=require('../fixtures/account.json')
     
         
         })
-        /*it.only('Search',function(){
+        it('Search',function(){
             cy.get('.porto-icon-search').click({force:true})
-            cy.get('#search').click().type('kurta')
-            cy.wait(10000)
-            cy.get('.searchsuite-autocomplete').should('be.visible')
-        })*/
+            cy.get('#search').should('be.visible').type('eid collection')
+            cy.get('.porto-icon-search').click({force:true})
+        })
    it('Testing Top Ticker',function(){
             ticker.tickerExist()
             ticker.tickerText()
