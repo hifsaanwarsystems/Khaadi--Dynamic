@@ -26,7 +26,12 @@ const acc=require('../fixtures/account.json')
     
         
         })
-
+        /*it.only('Search',function(){
+            cy.get('.porto-icon-search').click({force:true})
+            cy.get('#search').click().type('kurta')
+            cy.wait(10000)
+            cy.get('.searchsuite-autocomplete').should('be.visible')
+        })*/
    it('Testing Top Ticker',function(){
             ticker.tickerExist()
             ticker.tickerText()
@@ -48,12 +53,12 @@ const acc=require('../fixtures/account.json')
         })
         
         
-    it.only('PLP Testing',function()
+    it('PLP Testing',function()
     {
         
 
-      // plp.sortbyAsc()
-       //plp.sortbyDesc()
+    plp.sortbyAsc()
+    plp.sortbyDesc()
     plp.filtersCheck()
         
     })
@@ -98,4 +103,5 @@ it('Checkout Process for guest user',function()
     checkout.ShippingGuest()
     checkout.payment()
 })
+
     })

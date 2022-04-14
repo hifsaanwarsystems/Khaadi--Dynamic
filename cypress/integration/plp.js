@@ -204,23 +204,18 @@ filtersCheck()
     
     Cypress.$('.level-top').length;
     for (let i = 4; i < mylengh; i++) {
-        if(i==8)
-        {
-            
-        }
-        else
-        {
+        
         cy.get(':nth-child('+i+') > .level-top').click()
         cy.get(':nth-child(1) > .filter-btn-wrapper > .filter_button').click({force:true})
-        /*cy.get('.layer-input-filter').then($input=>{
+        cy.get('.layer-input-filter').then($input=>{
           
             cy.log($input.length)
             for(let u=0;u<$input.length;u++)
             {
-                cy.get('.layer-input-filter').eq(u).click({force:true})
-                cy.wait(3000)
+                cy.get('.layer-input-filter').eq(u).should('exist')
+               
             }
-        })*/
+        })
         cy.xpath("//a[@class='swatch-option-link-layered']").then($colors=>{
             for(let f=0;f<$colors.length;f++)
             {
@@ -240,10 +235,10 @@ filtersCheck()
             cy.get('.product-item-info > .details > .description').eq(q).should('be.visible')
             cy.get('.price').eq(q).should('be.visible').should('not.have.value','Rs. 0')
             cy.get('.product-item-info > .photo > .syte-plp-wrapper > .syte-discovery').eq(q).should('exist')
-            cy.get('.product-item-info > .photo > a > .default_image').eq(q).invoke('attr','src').should('include','https://pk.khaadi.com/media/catalog/product/')
+          //  cy.get('.product-item-info > .photo > a > .default_image').eq(q).invoke('attr','src').should('include','https://pk.khaadi.com/media/catalog/product/')
             }
     })
-    }
+    
 }
 })
     
