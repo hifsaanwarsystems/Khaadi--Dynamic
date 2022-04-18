@@ -18,92 +18,92 @@ const acc=require('../fixtures/account.json')
     const pdp=new PDP()
     const account= new Account()
     const checkout=new Checkout()
-    describe('Khaadi Website Automation',function(){
-      it('Visiting site ',function()
-        { 
-            cy.visit(getvalue.baseURL)
+ describe('Khaadi Website Automation',function(){
+    it('Visiting site ',function()
+            { 
+                cy.visit(getvalue.baseURL)
+                
+        
             
-    
-        
-        })
-        it('Search',function(){
-            cy.get('.porto-icon-search').click({force:true})
-            cy.get('#search').should('be.visible').type('eid collection')
-            cy.get('.porto-icon-search').click({force:true})
-        })
-   it('Testing Top Ticker',function(){
-            ticker.tickerExist()
-            ticker.tickerText()
-            ticker.shopNow()
-        }) 
+            })
+    it('Search',function(){
+                cy.get('.porto-icon-search').click({force:true})
+                cy.get('#search').should('be.visible').type('eid collection')
+                cy.get('.porto-icon-search').click({force:true})
+            })
+    it('Testing Top Ticker',function(){
+                ticker.tickerExist()
+                ticker.tickerText()
+                ticker.shopNow()
+            }) 
     it('Testing header',function(){
-    homepage.navigation()
-    homepage.logoCheck()
+        homepage.navigation()
+        homepage.logoCheck()
 
-        })
-        
+            })
+            
     it('Testing Home Page Half Images and Banners',function()
-        {
-    homepage.halfimage(temp.unstitchedhalf,0)
-    homepage.halfimage(temp.readytowear,1)
-    homepage.halfimage(temp.western,2)
-    homepage.Secondscrollbanners()
-    homepage.bannerImages()
-    homepage.bannerDots()
-    homepage.productSliderImages()
+            {
+        homepage.halfimage(temp.unstitchedhalf,0)
+        homepage.halfimage(temp.readytowear,1)
+        homepage.halfimage(temp.western,2)
+        homepage.Secondscrollbanners()
+        homepage.bannerImages()
+        homepage.bannerDots()
+        homepage.productSliderImages()
 
-        })
-        
-        
+            })
+            
+            
     it('PLP Testing',function()
-    {
-        
+        {
+            
 
-    plp.sortbyAsc()
-    plp.sortbyDesc()
-    plp.filtersCheck()
-        
-    })
+        plp.sortbyAsc()
+        plp.sortbyDesc()
+        plp.filtersCheck()
+            
+        })
 
     it('Testing Footer',function(){
-        Footer.footertop()
-        Footer.footertopinner()
-        Footer.footermiddle()
+            Footer.footertop()
+            Footer.footertopinner()
+            Footer.footermiddle()
 
+        })
+
+    it('Testing PDP',function()
+    {
+        pdp.pdpvalidation()
+        
+        
     })
 
-it('Testing PDP',function()
-{
-    pdp.pdpvalidation()
-    
-    
-})
-
-it('Testing Account',function()
-{
-account.createAccount(acc.email,acc.password,'hifsa','khan')
-account.signin(acc.email,acc.password)
-account.myaccount()
-})
-
-it('Checkout Process with Registered account',function()
-{
+    it('Testing Account',function()
+    {
+    account.createAccount(acc.email,acc.password,'hifsa','khan')
     account.signin(acc.email,acc.password)
-    checkout.addingProducts()
-       checkout.minicart()
-        checkout.cart()
-        checkout.ShippingRegistered()
-        checkout.payment()
-        cy.contains('Sign Out').click({force:true})
-})
-
-it('Checkout Process for guest user',function()
-{
-    checkout.addingProducts()
-    checkout.minicart()
-    checkout.cart()
-    checkout.ShippingGuest()
-    checkout.payment()
-})
-
+    account.myaccount()
     })
+
+    it('Checkout Process with Registered account',function()
+    {
+        account.signin(acc.email,acc.password)
+        checkout.addingProducts()
+        checkout.minicart()
+            checkout.cart()
+            checkout.ShippingRegistered()
+            checkout.payment()
+            cy.contains('Sign Out').click({force:true})
+    })
+
+    it('Checkout Process for guest user',function()
+    {
+        checkout.addingProducts()
+        checkout.minicart()
+        checkout.cart()
+        checkout.ShippingGuest()
+        checkout.payment()
+    })
+
+        })

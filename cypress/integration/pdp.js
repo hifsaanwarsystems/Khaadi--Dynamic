@@ -14,7 +14,7 @@ cy.document().then((doc) => {
 var mylengh = Cypress.$('.navigation .level-top').length+2;
 
 Cypress.$('.level-top').length;
-for (let i = 2; i < mylengh; i++) {
+for (let i = 3; i < mylengh; i++) {
 cy.log('**[ Opening New Category ]()**')
 cy.get(':nth-child('+i+') > .level-top').click()
 cy.xpath("//ol[@class='filterproducts products list items product-items ']//li").then($item=>{
