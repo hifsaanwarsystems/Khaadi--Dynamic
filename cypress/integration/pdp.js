@@ -14,7 +14,7 @@ cy.document().then((doc) => {
 var mylengh = Cypress.$('.navigation .level-top').length+2;
 
 Cypress.$('.level-top').length;
-for (let i = 3; i < mylengh; i++) {
+for (let i = 3; i <mylengh; i++) {
 cy.log('**[ Opening New Category ]()**')
 cy.get(':nth-child('+i+') > .level-top').click()
 cy.xpath("//ol[@class='filterproducts products list items product-items ']//li").then($item=>{
@@ -24,11 +24,13 @@ cy.log(items)
 for(let j=0;j<5;j++)
 {
         cy.log('**[ Clicking on product ]()**')
+        cy.get('.price').eq(j).should('not.have.text','Rs. 0')
+
         cy.get(' .product-item-link').eq(j).click({force:true})
         cy.log('**[ Product Title Verification ]()**')
         cy.get('.base').should('be.visible')
         cy.log('**[ Product Description Verification ]()**')
-        cy.get('.overview > .value').should('be.visible').should('not.be.empty')
+        cy.get('.overview > .value').should('be.visible').should('not.be.empty').should('not.have.text','Rs. 0')
         cy.log('**[ Price Box Verification ]()**')
         cy.get('.product-info-main > .price-box').should('be.visible').should('not.be.empty')
         cy.log('**[ Availability Verification ]()**')
@@ -74,13 +76,13 @@ for(let j=0;j<5;j++)
            for(let k=0;k<length;k++)
            {
             cy.get('.mt-thumb-switcher ').eq(k).should('be.visible').click()
-            
+            cy.log('**[ Main Image Verification ]()**')
+           cy.get('#mtImageContainer').should('be.visible')
+            cy.get('figure').children().invoke('children','img').invoke('attr','src').should('contain','https://pk.khaadi.com/media/catalog/product/')
            }
         })
 
-        cy.log('**[ Main Image Verification ]()**')
-        cy.get('#mtImageContainer').should('be.visible')
-        cy.get('figure').children().invoke('children','img').invoke('attr','src').should('contain','https://pk.khaadi.com/media/catalog/product/')
+        
 
       //  Cypress.$("div[class^='MagicToolboxSelectors']").children()
         //cy.get('.mt-thumb-switcher mz-thumb').children()

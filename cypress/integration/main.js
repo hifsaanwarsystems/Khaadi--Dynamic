@@ -26,7 +26,7 @@ const acc=require('../fixtures/account.json')
         
             
             })
-    it('Search',function(){
+   /* it('Search',function(){
                 cy.get('.porto-icon-search').click({force:true})
                 cy.get('#search').should('be.visible').type('eid collection')
                 cy.get('.porto-icon-search').click({force:true})
@@ -64,7 +64,21 @@ const acc=require('../fixtures/account.json')
         plp.filtersCheck()
             
         })
+it('Testing Sales',function()
+{
+   
+    cy.get(':nth-child(2) > .level-top > span').click()
+    cy.xpath("//ol[@class='filterproducts products list items product-items ']//li").then($item=>{
+var items=$item.length
+cy.log(items)
 
+for(let j=0;j<items;j++)
+{
+    cy.get('.product-item-info > .photo > .product-labels > .product-label').eq(j).should('be.visible')
+    cy.get('.price').eq(j).should('not.have.text','Rs. 0')
+}
+})
+})
     it('Testing Footer',function(){
             Footer.footertop()
             Footer.footertopinner()
@@ -105,5 +119,6 @@ const acc=require('../fixtures/account.json')
         checkout.ShippingGuest()
         checkout.payment()
     })
+*/
 
         })
